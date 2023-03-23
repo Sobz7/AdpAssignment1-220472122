@@ -24,7 +24,16 @@ public class Sales {
             return price;
         }
 
-        public static class Builder {
+    @Override
+    public String toString() {
+        return "Sales{" +
+                "productName='" + productName + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                '}';
+    }
+
+    public static class Builder {
             private String productName;
             private int quantity;
             private double price;
@@ -41,6 +50,12 @@ public class Sales {
 
             public Builder setPrice(double price) {
                 this.price = price;
+                return this;
+            }
+            public Builder copy (Sales sales){
+                this.productName = sales.productName;
+                this.quantity = sales.quantity;
+                this.price = sales.price;
                 return this;
             }
 

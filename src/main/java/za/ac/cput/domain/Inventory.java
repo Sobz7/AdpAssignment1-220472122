@@ -24,28 +24,41 @@ public class Inventory {
         return price;
     }
 
+    @Override
+    public String toString() {
+        return "Inventory{" +
+                "itemName='" + itemName + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                '}';
+    }
 
-    public static class InventoryBuilder {
+    public static class Builder {
         private String itemName;
         private int quantity;
         private double price;
 
-        public InventoryBuilder setItemName(String itemName) {
+        public Builder setItemName(String itemName) {
             this.itemName = itemName;
             return this;
         }
 
-        public InventoryBuilder setQuantity(int quantity) {
+        public Builder setQuantity(int quantity) {
             this.quantity = quantity;
             return this;
         }
 
-        public InventoryBuilder setPrice(double price) {
+        public Builder setPrice(double price) {
             this.price = price;
             return this;
         }
 
-
+        public Builder copy (Inventory inventory) {
+            this.itemName = inventory.itemName;
+            this.quantity = inventory.quantity;
+            this.price = inventory.price;
+            return this;
+        }
         public Inventory build() {
             return new Inventory(itemName, quantity, price);
         }
