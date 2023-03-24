@@ -11,7 +11,9 @@ public class Inventory {
         this.quantity = quantity;
         this.reorderQuantity = reorderQuantity;
     }
-    private  Inventory(Builder builder) {
+
+
+    private  Inventory (Builder builder) {
         this.productId = builder.productId;
         this.quantity = builder.quantity;
         this.reorderQuantity = builder.reorderQuantity;
