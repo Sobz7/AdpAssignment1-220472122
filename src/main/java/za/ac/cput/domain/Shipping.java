@@ -11,6 +11,15 @@ public class Shipping {
     private LocalDate deliveryDate;
 
     private Shipping(){}
+    
+    public Shipping(Builder builder) {
+        this.shippingID = builder.shippingID;
+        this.orderID = builder.orderID;
+        this.carrierName = builder.carrierName;
+        this.trackingNumber = builder.trackingNumber;
+        this.shippingDate = builder.shippingDate;
+        this.deliveryDate = builder.deliveryDate;
+    }
 
     public String getShippingID() {
         return shippingID;
