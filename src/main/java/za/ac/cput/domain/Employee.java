@@ -1,44 +1,51 @@
 package za.ac.cput.domain;
 
 public class Employee {
-    private String EmployeeId;
-    private String Name;
-    private String Email;
+    private String employeeId;
+    private String name;
+    private String email;
 
-    private Employee(){
-
+    public Employee(String employeeId, String name, String email) {
+        this.employeeId = employeeId;
+        this.name = name;
+        this.email = email;
     }
 
     public String getEmployeeId() {
-        return EmployeeId;
-    }
-
-    public void setEmployeeId(String employeeId) {
-        EmployeeId = employeeId;
+        return employeeId;
     }
 
     public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
+        return name;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
-    public void setEmail(String email) {
-        Email = email;
-    }
+    public static class EmployeeBuilder{
+        private String employeeId;
+        private String name;
+        private String email;
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "EmployeeId='" + EmployeeId + '\'' +
-                ", Name='" + Name + '\'' +
-                ", Email='" + Email + '\'' +
-                '}';
+        public EmployeeBuilder setEmployeeId(String employeeId){
+            this.employeeId = employeeId;
+            return this;
+        }
+
+        public EmployeeBuilder setName(String name){
+            this.name = name;
+            return this;
+        }
+
+        public EmployeeBuilder setEmail(String email){
+            this.email = email;
+            return this;
+        }
+
+        public Employee build(){
+            return new Employee(employeeId,name,email);
+        }
+
     }
 }
