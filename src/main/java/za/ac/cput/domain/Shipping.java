@@ -92,7 +92,7 @@ public class Shipping {
 
 
         public Builder setshippingID(String shippingID) {
-            this.paymentID = paymentID;
+            this.shippingID = shippingID;
             return this;
         }
         public Builder setorderID(String orderID) {
@@ -117,7 +117,7 @@ public class Shipping {
             return this;
         }
         public Builder copy (Shipping shipping){
-            this.paymentID = shipping.paymentID;
+            this.shippingID = shipping.shippingID;
             this.orderID = shipping.orderID;
             this.carrierName = shipping.carrierName;
             this.trackingNumber = shipping.trackingNumber;
