@@ -71,4 +71,56 @@ public class Shipping {
                 ", deliveryDate=" + deliveryDate +
                 '}';
     }
+     public static class Builder {
+
+        private String shippingID;
+        private String orderID;
+        private String carrierName;
+        private Integer trackingNumber;
+        private LocalDate shippingDate;
+        private LocalDate deliveryDate;
+
+
+
+        public Builder setshippingID(String shippingID) {
+            this.paymentID = paymentID;
+            return this;
+        }
+        public Builder setorderID(String orderID) {
+            this.orderID = orderID;
+            return this;
+        }
+
+        public Builder setcarrierName(String carrierName) {
+            this.carrierName = carrierName;
+            return this;
+        }
+        public Builder settrackingNumber(Integer trackingNumber) {
+            this.trackingNumber = trackingNumber;
+            return this;
+        }
+        public Builder setshippingDate(LocalDate shippingDate) {
+            this.shippingDate = shippingDate;
+            return this;
+        }
+         public Builder setdeliveryDate(LocalDate deliveryDate) {
+            this.deliveryDate = deliveryDate;
+            return this;
+        }
+        public Builder copy (Shipping shipping){
+            this.paymentID = shipping.paymentID;
+            this.orderID = shipping.orderID;
+            this.carrierName = shipping.carrierName;
+            this.trackingNumber = shipping.trackingNumber;
+            this.shippingDate = shipping.shippingDate;
+            this.deliveryDate = shipping.deliveryDate;
+            return this;
+        }
+
+        public Shipping build(){
+            return new Shipping(this);
+        }
+    }
+
+
 }
