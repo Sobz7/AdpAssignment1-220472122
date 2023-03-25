@@ -12,6 +12,7 @@ public class CustomerFactory  {
 
     public static Customer createCustomer(String name, String surname, String email){
         if(!Helper.isValidEmail(email))
+
             return null;
 
             if(Helper.isNullorEmpty(name)|| Helper.isNullorEmpty(surname))
