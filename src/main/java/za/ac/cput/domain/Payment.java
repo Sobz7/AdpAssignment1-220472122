@@ -1,3 +1,8 @@
+// Payment.Domain.java
+// POJO for the Payment
+// Author: Sobantu Malotana (220472122)
+// Date: 20 March 2023
+
 package za.ac.cput.domain;
 
 import java.time.LocalDate;
@@ -6,11 +11,18 @@ public class Payment {
     private String paymentID;
     private String orderID;
     private LocalDate paymentDate;
-    private Integer paymentAmount;
+    private double paymentAmount;
     private String paymentMethod;
 
     private Payment(){}
 
+    public Payment(Builder builder) {
+        this.paymentID = builder.paymentID;
+        this.orderID = builder.orderID;
+        this.paymentDate = builder.paymentDate;
+        this.paymentAmount = builder.paymentAmount;
+        this.paymentMethod = builder.paymentMethod;
+    }
     public String getPaymentID() {
         return paymentID;
     }
@@ -35,11 +47,11 @@ public class Payment {
         this.paymentDate = paymentDate;
     }
 
-    public Integer getPaymentAmount() {
+    public double getPaymentAmount() {
         return paymentAmount;
     }
 
-    public void setPaymentAmount(Integer paymentAmount) {
+    public void setPaymentAmount(double paymentAmount) {
         this.paymentAmount = paymentAmount;
     }
 
@@ -61,4 +73,49 @@ public class Payment {
                 ", paymentMethod='" + paymentMethod + '\'' +
                 '}';
     }
+    public static class Builder {
+
+        private String paymentID;
+        private String orderID;
+        private LocalDate paymentDate;
+        private double paymentAmount;
+        private String paymentMethod;
+
+
+
+        public Builder setpaymentID(String paymentID) {
+            this.paymentID = paymentID;
+            return this;
+        }
+        public Builder setorderID(String orderID) {
+            this.orderID = orderID;
+            return this;
+        }
+
+        public Builder setpaymentDate(LocalDate paymentDate) {
+            this.paymentDate = paymentDate;
+            return this;
+        }
+        public Builder setpaymentAmount(double paymentAmount) {
+            this.paymentAmount = paymentAmount;
+            return this;
+        }
+        public Builder setpaymentMethod(String paymentMethod) {
+            this.paymentMethod = paymentMethod;
+            return this;
+        }
+        public Builder copy (Payment payment){
+            this.paymentID = payment.paymentID;
+            this.orderID = payment.orderID;
+            this.paymentAmount = payment.paymentAmount;
+            this.paymentDate = payment.paymentDate;
+            this.paymentMethod = payment.paymentMethod;
+            return this;
+        }
+
+        public Payment build(){
+            return new Payment(this);
+        }
+    }
+
 }
