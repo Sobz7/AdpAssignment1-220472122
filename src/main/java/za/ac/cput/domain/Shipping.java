@@ -7,8 +7,8 @@ package za.ac.cput.domain;
 import java.time.LocalDate;
 
 public class Shipping {
-    private String shippingID;
-    private String orderID;
+    private String shippingId;
+    private String orderId;
     private String carrierName;
     private Integer trackingNumber;
     private LocalDate shippingDate;
@@ -17,28 +17,28 @@ public class Shipping {
     private Shipping(){}
 
     public Shipping(Builder builder) {
-        this.shippingID = builder.shippingID;
-        this.orderID = builder.orderID;
+        this.shippingId = builder.shippingId;
+        this.orderId = builder.orderId;
         this.carrierName = builder.carrierName;
         this.trackingNumber = builder.trackingNumber;
         this.shippingDate = builder.shippingDate;
         this.deliveryDate = builder.deliveryDate;
     }
 
-    public String getShippingID() {
-        return shippingID;
+    public String getShippingId() {
+        return shippingId;
     }
 
-    public void setShippingID(String shippingID) {
-        this.shippingID = shippingID;
+    public void setShippingId(String shippingId) {
+        this.shippingId = shippingId;
     }
 
-    public String getOrderID() {
-        return orderID;
+    public String getOrderId() {
+        return orderId;
     }
 
-    public void setOrderID(String orderID) {
-        this.orderID = orderID;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     public String getCarrierName() {
@@ -76,8 +76,8 @@ public class Shipping {
     @Override
     public String toString() {
         return "Shipping{" +
-                "shippingID='" + shippingID + '\'' +
-                ", orderID='" + orderID + '\'' +
+                "shippingId='" + shippingId + '\'' +
+                ", orderId='" + orderId + '\'' +
                 ", carrierName='" + carrierName + '\'' +
                 ", trackingNumber=" + trackingNumber +
                 ", shippingDate=" + shippingDate +
@@ -86,8 +86,8 @@ public class Shipping {
     }
     public static class Builder {
 
-        private String shippingID;
-        private String orderID;
+        private String shippingId;
+        private String orderId;
         private String carrierName;
         private Integer trackingNumber;
         private LocalDate shippingDate;
@@ -95,12 +95,12 @@ public class Shipping {
 
 
 
-        public Builder setshippingID(String shippingID) {
-            this.shippingID = shippingID;
+        public Builder setshippingId(String shippingId) {
+            this.shippingId = shippingId;
             return this;
         }
-        public Builder setorderID(String orderID) {
-            this.orderID = orderID;
+        public Builder setorderId(String orderId) {
+            this.orderId = orderId;
             return this;
         }
 
@@ -121,8 +121,8 @@ public class Shipping {
             return this;
         }
         public Builder copy (Shipping shipping){
-            this.shippingID = shipping.shippingID;
-            this.orderID = shipping.orderID;
+            this.shippingId = shipping.shippingId;
+            this.orderId = shipping.orderId;
             this.carrierName = shipping.carrierName;
             this.trackingNumber = shipping.trackingNumber;
             this.shippingDate = shipping.shippingDate;

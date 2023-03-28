@@ -10,9 +10,9 @@ import java.time.LocalDate;
 
 public class PaymentFactory {
 
-    public static Payment createPayment(String paymentID, String orderID, LocalDate paymentDate, double paymentAmount, String paymentMethod){
-        return new Payment.Builder().setpaymentID(paymentID)
-                .setorderID(orderID)
+    public static Payment createPayment(String paymentId, String orderId, LocalDate paymentDate, double paymentAmount, String paymentMethod){
+        return new Payment.Builder().setpaymentId(paymentId)
+                .setorderId(orderId)
                 .setpaymentDate(paymentDate)
                 .setpaymentAmount(paymentAmount)
                 .setpaymentMethod(paymentMethod)

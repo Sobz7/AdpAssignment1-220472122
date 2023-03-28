@@ -6,13 +6,19 @@
 package za.ac.cput.factory;
 
 import za.ac.cput.domain.Shipping;
+import za.ac.cput.util.Helper;
 
 import java.time.LocalDate;
 
 public class ShippingFactory {
-    public static Shipping createShipping(String shippingID, String orderID, String carrierName, Integer trackingNumber, LocalDate shippingDate, LocalDate deliveryDate){
-        return new Shipping.Builder().setshippingID(shippingID)
-                .setorderID(orderID)
+    public static Shipping createShipping(String shippingId, String orderId, String carrierName, Integer trackingNumber,
+                                          LocalDate shippingDate, LocalDate deliveryDate)
+    {
+        if(Helper.isNullorEmpty(shippingId) || Helper.isNullorEmpty(orderId))
+            return null;
+
+        return new Shipping.Builder().setshippingId(shippingId)
+                .setorderId(orderId)
                 .setcarrierName(carrierName)
                 .settrackingNumber(trackingNumber)
                 .setshippingDate(shippingDate)

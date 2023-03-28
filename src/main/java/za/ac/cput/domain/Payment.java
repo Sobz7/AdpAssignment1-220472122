@@ -8,8 +8,8 @@ package za.ac.cput.domain;
 import java.time.LocalDate;
 
 public class Payment {
-    private String paymentID;
-    private String orderID;
+    private String paymentId;
+    private String orderId;
     private LocalDate paymentDate;
     private double paymentAmount;
     private String paymentMethod;
@@ -17,26 +17,26 @@ public class Payment {
     private Payment(){}
 
     public Payment(Builder builder) {
-        this.paymentID = builder.paymentID;
-        this.orderID = builder.orderID;
+        this.paymentId = builder.paymentId;
+        this.orderId = builder.orderId;
         this.paymentDate = builder.paymentDate;
         this.paymentAmount = builder.paymentAmount;
         this.paymentMethod = builder.paymentMethod;
     }
-    public String getPaymentID() {
-        return paymentID;
+    public String getPaymentId() {
+        return paymentId;
     }
 
-    public void setPaymentID(String paymentID) {
-        this.paymentID = paymentID;
+    public void setPaymentId(String paymentId) {
+        this.paymentId = paymentId;
     }
 
-    public String getOrderID() {
-        return orderID;
+    public String getOrderId() {
+        return orderId;
     }
 
-    public void setOrderID(String orderID) {
-        this.orderID = orderID;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     public LocalDate getPaymentDate() {
@@ -66,8 +66,8 @@ public class Payment {
     @Override
     public String toString() {
         return "Payment{" +
-                "paymentID='" + paymentID + '\'' +
-                ", orderID='" + orderID + '\'' +
+                "paymentId='" + paymentId + '\'' +
+                ", orderId='" + orderId + '\'' +
                 ", paymentDate=" + paymentDate +
                 ", paymentAmount=" + paymentAmount +
                 ", paymentMethod='" + paymentMethod + '\'' +
@@ -75,20 +75,20 @@ public class Payment {
     }
     public static class Builder {
 
-        private String paymentID;
-        private String orderID;
+        private String paymentId;
+        private String orderId;
         private LocalDate paymentDate;
         private double paymentAmount;
         private String paymentMethod;
 
 
 
-        public Builder setpaymentID(String paymentID) {
-            this.paymentID = paymentID;
+        public Builder setpaymentId(String paymentId) {
+            this.paymentId = paymentId;
             return this;
         }
-        public Builder setorderID(String orderID) {
-            this.orderID = orderID;
+        public Builder setorderId(String orderId) {
+            this.orderId = orderId;
             return this;
         }
 
@@ -105,8 +105,8 @@ public class Payment {
             return this;
         }
         public Builder copy (Payment payment){
-            this.paymentID = payment.paymentID;
-            this.orderID = payment.orderID;
+            this.paymentId = payment.paymentId;
+            this.orderId = payment.orderId;
             this.paymentAmount = payment.paymentAmount;
             this.paymentDate = payment.paymentDate;
             this.paymentMethod = payment.paymentMethod;
